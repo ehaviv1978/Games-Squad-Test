@@ -22,21 +22,6 @@ public class Chest : MonoBehaviour, IInteractable
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //animator.SetTrigger("Open Chest");
-        //chestCap.transform.Rotate(new Vector3(-90, 0, 0));
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (isOpen)
-        {
-            animator.SetTrigger("Close Chest");
-            isOpen = false;
-        }
-        //chestCap.transform.Rotate(new Vector3(90, 0, 0));
-    }
 
     public void Activated()
     {
@@ -44,6 +29,11 @@ public class Chest : MonoBehaviour, IInteractable
         {
             animator.SetTrigger("Open Chest");
             isOpen = true;
+        }
+        else
+        {
+            animator.SetTrigger("Close Chest");
+            isOpen = false;
         }
     }
 }
