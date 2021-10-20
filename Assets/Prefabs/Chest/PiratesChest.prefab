@@ -113,9 +113,9 @@ GameObject:
   - component: {fileID: 33681150751303494}
   - component: {fileID: 23440727650024070}
   - component: {fileID: 65590042247723914}
-  - component: {fileID: 1790239075}
   - component: {fileID: 1790239070}
   - component: {fileID: 1790239074}
+  - component: {fileID: 2596093396172314548}
   m_Layer: 0
   m_Name: PiratesChest
   m_TagString: Untagged
@@ -197,24 +197,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234933539761222}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8940215, y: 0.7191372, z: 0.6912381}
-  m_Center: {x: 0.008586407, y: 0.39644122, z: 0.05806349}
---- !u!135 &1790239075
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234933539761222}
-  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0.008586466, y: 0.26047572, z: 0.05806312}
+  m_Size: {x: 1.2353188, y: 0.80370665, z: 0.66080505}
+  m_Center: {x: 0.06794262, y: 0.43872595, z: 0.5860965}
 --- !u!95 &1790239070
 Animator:
   serializedVersion: 3
@@ -246,7 +233,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b570a0ac9fd1c834db6efa1f093674b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestCap: {fileID: 1617632788097990}
+  chestOpenSound: {fileID: 8300000, guid: 00c023ea47dfd6a4fadc7a560f5b8930, type: 3}
+  chestOpenVolume: 0.631
+  chestLockSound: {fileID: 8300000, guid: c33d21388d195a24eac052799049b2a7, type: 3}
+  chestLockVolume: 0.5
+--- !u!65 &2596093396172314548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234933539761222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.89402175, y: 0.44722033, z: 0.6912383}
+  m_Center: {x: 0.008586468, y: 0.26047572, z: 0.058063135}
 --- !u!1 &1446596243667872
 GameObject:
   m_ObjectHideFlags: 0

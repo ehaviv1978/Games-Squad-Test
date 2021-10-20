@@ -175,6 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d672a9b2b1a59ad49b7391e69bbff558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dorOpenSound: {fileID: 8300000, guid: a4d14e06acabc7d4a9f51c774d6a8494, type: 3}
+  dorOpenVolume: 0.5
+  dorLockSound: {fileID: 8300000, guid: 4e0410917d4452a40a85f42f9e2ce916, type: 3}
+  dorLockVolume: 0.5
 --- !u!95 &833496806
 Animator:
   serializedVersion: 3
