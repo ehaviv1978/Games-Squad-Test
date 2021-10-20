@@ -5,8 +5,6 @@ using Assets.Scripts;
 
 public class Chest : MonoBehaviour, IInteractable
 {
-    [SerializeField] private GameObject chestCap;
-
     private Animator animator;
 
     private bool isOpen = false;
@@ -14,12 +12,6 @@ public class Chest : MonoBehaviour, IInteractable
     void Start()
     {
         animator = GetComponent<Animator>();   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 
