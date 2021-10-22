@@ -34,8 +34,8 @@ public class Player : MonoBehaviour
     
     private void InteractableInView()
     {
-        Vector3 viewPos = Camera.main.WorldToViewportPoint(interactableInRangeGameObject.gameObject.transform.position);
-        if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(interactableInRangeGameObject.GetComponent<BoxCollider>().transform.position);
+        if (viewPos.x >= -0.5 && viewPos.x <= 1.5 && viewPos.y >= -0.5 && viewPos.y <= 1.5 && viewPos.z > 0)
         {
             canvasInteractables.enabled = true;
             currentInteractable = interactableInRangeGameObject.gameObject.GetComponent<IInteractable>();
