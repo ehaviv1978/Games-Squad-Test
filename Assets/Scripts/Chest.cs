@@ -9,6 +9,8 @@ public class Chest : MonoBehaviour, IInteractable
     [SerializeField] [Range(0, 1)] private float chestOpenVolume = 0.5f;
     [SerializeField] private AudioClip chestLockSound;
     [SerializeField] [Range(0, 1)] private float chestLockVolume = 0.5f;
+    [SerializeField] private Transform interactablePosition;
+
 
     private Animator animator;
 
@@ -39,5 +41,10 @@ public class Chest : MonoBehaviour, IInteractable
     public void PlayChestLockSound()
     {
         AudioSource.PlayClipAtPoint(chestLockSound, Camera.main.transform.position, chestLockVolume);
+    }
+
+    public Vector3 GetInteractablePosition()
+    {
+        return interactablePosition.position;
     }
 }

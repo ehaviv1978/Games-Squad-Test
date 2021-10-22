@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3398946}
   - component: {fileID: 2341864}
   - component: {fileID: 6580822}
+  - component: {fileID: 831192100425764072}
   m_Layer: 0
   m_Name: glass_panel_1_door
   m_TagString: Untagged
@@ -29,7 +30,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.744, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3592472703998121521}
   m_Father: {fileID: 417258}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91,11 +93,25 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127260}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3235092, y: 2.9869292, z: 0.13877574}
-  m_Center: {x: -0.6881752, y: 1.4934646, z: -0.014756661}
+  m_Size: {x: 1.7560452, y: 2.9869292, z: 1.774198}
+  m_Center: {x: -0.74447817, y: 1.4934646, z: 0.04937482}
+--- !u!64 &831192100425764072
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 37fb91b59d4d2ba4da8fbcf15d055ebe, type: 3}
 --- !u!1 &141970
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +126,6 @@ GameObject:
   - component: {fileID: 9575016}
   - component: {fileID: 6452128}
   - component: {fileID: 4306308417476481278}
-  - component: {fileID: -3005226813156855206}
   m_Layer: 0
   m_Name: glass_panel_1_with_door
   m_TagString: Untagged
@@ -232,16 +247,34 @@ MonoBehaviour:
   dorOpenVolume: 0.5
   dorLockSound: {fileID: 8300000, guid: 4e0410917d4452a40a85f42f9e2ce916, type: 3}
   dorLockVolume: 0.5
---- !u!65 &-3005226813156855206
-BoxCollider:
+  interactablePosition: {fileID: 3592472703998121521}
+--- !u!1 &1027470543563383488
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6591021, y: 4.000002, z: 2.478931}
-  m_Center: {x: 0.023109019, y: 2, z: 0.008986771}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3592472703998121521}
+  m_Layer: 0
+  m_Name: Interactable Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3592472703998121521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027470543563383488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.055, y: 1.52, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 435530}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

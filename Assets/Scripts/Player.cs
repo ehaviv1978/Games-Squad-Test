@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Canvas canvasInteractables;
 
     private IInteractable currentInteractable;
-    private GameObject interactableInRangeGameObject;
+    private bool isInteractableInView = false;
+    //private GameObject interactableInRangeGameObject;
 
 
     void Start()
@@ -20,47 +21,50 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (interactableInRangeGameObject)
+        if (currentInteractable != null)
         {
             InteractableInView();
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && currentInteractable != null)
+        if (Input.GetKeyDown(KeyCode.F) && isInteractableInView)
         {
-            currentInteractable.Activated();
+            if (currentInteractable != null)
+                currentInteractable.Activated();
         }
     }
 
     
     private void InteractableInView()
     {
-        Vector3 viewPos = Camera.main.WorldToViewportPoint(interactableInRangeGameObject.GetComponent<BoxCollider>().transform.position);
-        if (viewPos.x >= -0.5 && viewPos.x <= 1.5 && viewPos.y >= -0.5 && viewPos.y <= 1.5 && viewPos.z > 0)
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(currentInteractable.GetInteractablePosition());
+        if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
         {
             canvasInteractables.enabled = true;
-            currentInteractable = interactableInRangeGameObject.gameObject.GetComponent<IInteractable>();
+            isInteractableInView = true;
+            //currentInteractable = interactableInRangeGameObject.gameObject.GetComponent<IInteractable>();
         }
         else
         {
             canvasInteractables.enabled = false;
-            currentInteractable = null;
+            isInteractableInView = false;
         }
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<IInteractable>() != null)
+        if (other.gameObject.GetComponentInParent<IInteractable>() != null)
         {
-            interactableInRangeGameObject = other.gameObject;
+            currentInteractable = other.gameObject.GetComponentInParent<IInteractable>();
+            //interactableInRangeGameObject = other.gameObject;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<IInteractable>() != null)
+        if (other.gameObject.GetComponentInParent<IInteractable>() != null)
         {
-            interactableInRangeGameObject = null;
+            //interactableInRangeGameObject = null;
             canvasInteractables.enabled = false;
             currentInteractable = null;
         }

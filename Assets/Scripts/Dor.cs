@@ -9,6 +9,7 @@ public class Dor : MonoBehaviour, IInteractable
     [SerializeField] [Range(0, 1)] private float dorOpenVolume = 0.5f;
     [SerializeField] private AudioClip dorLockSound;
     [SerializeField] [Range(0, 1)] private float dorLockVolume = 0.5f;
+    [SerializeField] private Transform interactablePosition;
 
     private Animator animator;
 
@@ -36,8 +37,16 @@ public class Dor : MonoBehaviour, IInteractable
         }
     }
 
+
+    public Vector3 GetInteractablePosition()
+    {
+        return interactablePosition.position;
+    }
+
+
     public void PlayLockSound()
     {
         AudioSource.PlayClipAtPoint(dorLockSound, Camera.main.transform.position, dorLockVolume);
     }
+
 }
