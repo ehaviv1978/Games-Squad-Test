@@ -594,6 +594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1b0bdd43026734fb2500f99cae39fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dorOpenSound: {fileID: 8300000, guid: cc13e5d8c56e2444facd1067b881defc, type: 3}
+  dorOpenVolume: 1
 --- !u!65 &2873961397811047104
 BoxCollider:
   m_ObjectHideFlags: 0
