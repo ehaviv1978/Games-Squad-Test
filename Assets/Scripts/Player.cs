@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
 
     private IInteractable currentInteractable;
     private bool isInteractableInView = false;
-    //private GameObject interactableInRangeGameObject;
 
 
     void Start()
@@ -41,7 +40,6 @@ public class Player : MonoBehaviour
         {
             canvasInteractables.enabled = true;
             isInteractableInView = true;
-            //currentInteractable = interactableInRangeGameObject.gameObject.GetComponent<IInteractable>();
         }
         else
         {
@@ -56,7 +54,6 @@ public class Player : MonoBehaviour
         if (other.gameObject.GetComponentInParent<IInteractable>() != null)
         {
             currentInteractable = other.gameObject.GetComponentInParent<IInteractable>();
-            //interactableInRangeGameObject = other.gameObject;
         }
     }
 
@@ -64,7 +61,6 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.GetComponentInParent<IInteractable>() != null)
         {
-            //interactableInRangeGameObject = null;
             canvasInteractables.enabled = false;
             currentInteractable = null;
         }
